@@ -1,0 +1,17 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Сделать заказ
+{% endblock %}
+
+{% block content %}
+    <h1>Сделать заказ</h1>
+    <div class="order-info">
+    </div>
+    <form method="post" class="order-form">
+        {{ form.as_p }}
+        <p><input type="submit" value="Place order"></p>
+        {% csrf_token %}
+    </form>
+{% endblock %}
+
