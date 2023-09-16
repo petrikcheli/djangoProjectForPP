@@ -24,7 +24,7 @@ def order_create(request):
                 transport = 'Поездом'
             cart.clear()
             #запустить асинхронное задание
-            #order_created.delay(order.id)
+            order_created.delay(order.id)
             return render(request,
                           'orders/order/created.html',
                           {'transport': transport, 'order': order})

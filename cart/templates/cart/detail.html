@@ -10,12 +10,12 @@
     <table class="cart">
         <thead>
             <tr>
-                <th>Image</th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Remove</th>
-                <th>Unit price</th>
-                <th>Price</th>
+                <th>Изображение</th>
+                <th>Продукт</th>
+                <th>Количество</th>
+                <th>Удалить</th>
+                <th>цена за товар</th>
+                <th>Цена</th>
             </tr>
         </thead>
         <tbody>
@@ -35,15 +35,15 @@
                                 {% csrf_token %}
                             </form>
                         </td>
-                        <td class="num">${{ item.price }}</td>
-                        <td class="num">${{ item.total_price }}</td>
+                        <td class="num">{{ item.price }} рублей</td>
+                        <td class="num">{{ item.total_price }} рублей</td>
                     </tr>
                 {% endwith %}
             {% endfor %}
             <tr class="total">
                 <td>Total</td>
                 <td colspan="4"></td>
-                <td class="num">${{ cart.get_total_price }}</td>
+                <td class="num">{{ cart.get_total_price }} рублей</td>
             </tr>
         </tbody>
     </table>
